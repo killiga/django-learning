@@ -1,5 +1,26 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from game.models import Product
+
+
+
+def add_product(request):
+
+    if request.method == "POST":
+
+        name = request.POST["name"]
+        price = request.POST["price"]
+
+        Product.objects.create(
+            name=name,
+            price=price
+        )
+
+    return render(
+        request,
+        "add_product.html"
+    )
+
 
 def hello(request):
     context = {
