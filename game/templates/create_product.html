@@ -1,0 +1,13 @@
+<h1>Создать продукт</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <input type="text" name="name" placeholder="Название">
+    <br><br>
+
+    <input type="number" name="price" placeholder="Цена">
+    <br><br>
+
+    <button type="submit">Создать</button>
+</form>

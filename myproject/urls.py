@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from game.views import hello, about, contacts, news, products, users, add_product
+from game.views import hello, about, contacts, news, products, users, create_product
 
 
 urlpatterns = [
@@ -11,5 +11,5 @@ urlpatterns = [
     path("news/", news),
     path("products/", products),
     path("user/", users),
-    path("add-product/", add_product),
+    path("create-product/", create_product),
 ]

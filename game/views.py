@@ -3,23 +3,19 @@ from django.http import HttpResponse
 from game.models import Product
 
 
-
-def add_product(request):
+def create_product(request):
 
     if request.method == "POST":
 
-        name = request.POST["name"]
-        price = request.POST["price"]
+        name = request.POST.get("name")
+        price = request.POST.get("price")
 
         Product.objects.create(
             name=name,
             price=price
         )
 
-    return render(
-        request,
-        "add_product.html"
-    )
+    return render(request, "create_product.html")
 
 
 def hello(request):
