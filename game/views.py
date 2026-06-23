@@ -43,10 +43,12 @@ def news(request):
 
 
 def products(request):
-    context = {
-        "products" : ["VPN Basic", "VPN Pro", "VPN Ultra"]
-    }
-    return render(request, "products.html", context)
+
+    products = Product.objects.all()
+
+    return render(request, "products.html", {
+        "products": products
+    })
 
 
 def users(request):
