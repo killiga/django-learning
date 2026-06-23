@@ -1,5 +1,7 @@
 <ul>
 {% for product in products %}
-    <li>{{product}}</li>
+    <li>{{product}}</li><li>{{price}}</li>
+    <a href="/delete-product/{{ product.id }}/">Удалить</a>
 {% endfor %}
 </ul>
+

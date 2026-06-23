@@ -1,6 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from game.models import Product
+
+
+def delete_product(request, id):
+
+    product = Product.objects.get(id=id)
+    product.delete()
+
+    return redirect("/products/")
+
+
+def edit_product(request, id):
+    product = Product.objects.get(id=id)
+
+    if request.method == "POST":
+
+        product.name = request.POST.get("name")
+        product.price = request.POST.get("price")
+
+        product.save()
+
+        return redirect("/products/")
+    
+    return render(request, "edit_product.html", {
+        "product": product 
+    })
 
 
 def create_product(request):
