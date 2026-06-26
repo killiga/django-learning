@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from game.models import Product
+from game.models import Product, Subscription
 
 
 def delete_product(request, id):
@@ -26,21 +26,6 @@ def edit_product(request, id):
     return render(request, "edit_product.html", {
         "product": product 
     })
-
-
-def create_product(request):
-
-    if request.method == "POST":
-
-        name = request.POST.get("name")
-        price = request.POST.get("price")
-
-        Product.objects.create(
-            name=name,
-            price=price
-        )
-
-    return render(request, "create_product.html")
 
 
 def hello(request):
@@ -84,3 +69,28 @@ def users(request):
     ]
     
     return render(request, "users.html")
+
+
+def subscriptions(request):
+    subscriptions = Subscription.objects.all()
+    return render(request, "subscriptions.html", {
+        "subscriptions": subscriptions
+    })
+
+
+def create_subscription(request):
+    if request.method == "POST":
+
+        name = request.POST.get("name")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+
+        Subscription.objects.create(
+        name=name,
+        price=price,
+        description=description
+        )
+        
+        return redirect("/subscriptions/")
+    
+    return render(request, "create_subscription.html")

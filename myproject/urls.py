@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from game.views import hello, about, contacts, news, products, users, create_product, edit_product, delete_product
+from game.views import hello, about, contacts, news, products, users, create_subscription, edit_product, delete_product, subscriptions
 
 
 urlpatterns = [
@@ -9,9 +9,10 @@ urlpatterns = [
     path("contacts/", contacts),
     path("news/", news),
     path("products/", products),
-    path("user/", users),
-    path("create-product/", create_product),
+    path("users/", users),
+    path("create-subscription/", create_subscription),
     path("edit-product/<int:id>/", edit_product),
     path("delete-product/<int:id>/", delete_product),
-    path("about/", about)
+    path("about/", about),
+    path("subscriptions/", subscriptions),
 ]

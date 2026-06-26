@@ -1,0 +1,8 @@
+<h1>Подписки</h1>
+
+{% for subscription in subscriptions %}
+    <h3>{{ subscription.name }}</h3>
+    <p>Цена: {{ subscription.price }}</p>
+    <p>Описание: {{ subscription.description }}</p>
+    <hr>
+{% endfor %}

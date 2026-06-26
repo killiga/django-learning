@@ -1,5 +1,3 @@
-<h1>Создать продукт</h1>
-
 <form method="post">
     {% csrf_token %}
 
@@ -9,5 +7,10 @@
     <input type="number" name="price" placeholder="Цена">
     <br><br>
 
-    <button type="submit">Создать</button>
+    <textarea name="description" placeholder="Описание"></textarea>
+    <br><br>
+
+    <button type="submit">
+        Создать подписку
+    </button>
 </form>
