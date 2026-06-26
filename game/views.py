@@ -53,7 +53,7 @@ def hello(request):
 
 
 def about(request):
-    return HttpResponse("Это мой первый Django проект")
+    return render(request, "about.html")
 
 
 def contacts(request):

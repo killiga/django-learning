@@ -6,7 +6,6 @@ from game.views import hello, about, contacts, news, products, users, create_pro
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("hello/", hello),
-    path("about/", about),
     path("contacts/", contacts),
     path("news/", news),
     path("products/", products),
@@ -14,4 +13,5 @@ urlpatterns = [
     path("create-product/", create_product),
     path("edit-product/<int:id>/", edit_product),
     path("delete-product/<int:id>/", delete_product),
+    path("about/", about)
 ]
