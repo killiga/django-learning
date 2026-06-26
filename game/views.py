@@ -77,8 +77,10 @@ def products(request):
 
 
 def users(request):
-    context = {
-        "name": "NAME",
-        "age": 18
-    }
-    return render(request, "user.html", context)
+    users = [
+    "Luka",
+    "Kate",
+    "Alex"
+    ]
+    
+    return render(request, "users.html")
