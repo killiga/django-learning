@@ -11,23 +11,6 @@ def delete_product(request, id):
     return redirect("/products/")
 
 
-def edit_product(request, id):
-    product = Product.objects.get(id=id)
-
-    if request.method == "POST":
-
-        product.name = request.POST.get("name")
-        product.price = request.POST.get("price")
-
-        product.save()
-
-        return redirect("/products/")
-    
-    return render(request, "edit_product.html", {
-        "product": product 
-    })
-
-
 def hello(request):
     context = {
         "name": "Lux",
@@ -94,3 +77,26 @@ def create_subscription(request):
         return redirect("/subscriptions/")
     
     return render(request, "create_subscription.html")
+
+
+def edit_subscription(request, id):
+
+    subscription = Subscription.objects.get(id=id)
+
+    if request.method == "POST":
+
+        subscription.name = request.POST.get("name")
+        subscription.price = request.POST.get("price")
+        subscription.description = request.POST.get("description")
+
+        subscription.save()
+
+        return redirect("/subscriptions/")
+
+    return render(
+        request,
+        "edit_subscription.html",
+        {
+            "subscription": subscription
+        }
+    )

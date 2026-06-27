@@ -1,0 +1,26 @@
+<h1>Редактировать подписку</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <input
+        type="text"
+        name="name"
+        value="{{ subscription.name }}"
+    >
+    <br><br>
+
+    <input
+        type="number"
+        name="price"
+        value="{{ subscription.price }}"
+    >
+    <br><br>
+
+    <textarea name="description">{{ subscription.description }}</textarea>
+    <br><br>
+
+    <button type="submit">
+        Сохранить
+    </button>
+</form>

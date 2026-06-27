@@ -20,6 +20,6 @@ class Subscription(models.Model):
     description = models.TextField(
     default="Описание пока не добавлено"
     )
-
+    
     def __str__(self):
         return self.name
