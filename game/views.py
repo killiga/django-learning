@@ -46,7 +46,7 @@ def products(request):
 
 def users(request):
     users = [
-    "Luka",
+    "Lux",
     "Kate",
     "Alex"
     ]
