@@ -99,4 +99,4 @@ def edit_subscription(request, id):
         {
             "subscription": subscription
         }
-    )
+    )   
